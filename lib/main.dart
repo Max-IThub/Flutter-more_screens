@@ -169,6 +169,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -232,8 +235,35 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
+
+          NavigationBar(
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.home), 
+            label: 'Home',
+            ),
+          NavigationDestination(
+            icon: Icon(Icons.explore), 
+            label: 'Explore',
+            ),
+          NavigationDestination(
+            icon: Icon(Icons.person), 
+            label: 'Profile'
+            ),
+          NavigationDestination(
+            icon: Icon(Icons.settings_rounded), 
+            label: 'Settings'
+            ),
         ],
       ),
+        ],
+
+        
+
+      ),
+
+      
+
     );
   }
 }
