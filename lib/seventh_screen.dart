@@ -16,6 +16,48 @@ class SeventhScreen extends StatelessWidget {
           },
         ),
       ),
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.blue,
+              ),
+              ),
+              const Expanded(
+                flex: 1,
+                child: SizedBox(),
+                ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  color: Colors.red,
+                ),
+              ),
+              const Expanded(
+                flex: 1,
+                child: SizedBox(),
+                ),
+              Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.purple,
+              ),
+              ),
+              const Expanded(
+                flex: 1,
+                child: SizedBox(),
+                ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  color: Colors.green,
+                ),
+              ),
+                    ],
+        ),
+      ),
     );
   }
 }

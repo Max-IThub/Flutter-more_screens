@@ -19,23 +19,33 @@ class FourthScreen extends StatelessWidget {
       body: Row(
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 136,
-                height: 50,
+              Expanded(
+                flex: 1,
+                child:Container(
+                // width: 136,
+                 height: 50,
                 color: const Color.fromARGB(255, 223, 221, 221),
               ),
-              Container(
-                width: 136,
-                height: 50,
+               ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                // width: 136,
+                 height: 50,
                 color: Colors.blue,
               ),
-              Container(
-                width: 136,
-                height: 50,
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                // width: 136,
+                 height: 50,
                 color: Colors.red,
               ),
+              ),
+              
             ],
           ),
           Column(
