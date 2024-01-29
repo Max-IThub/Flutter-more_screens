@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:more_screens/eighth_screen.dart';
 import 'package:more_screens/fifth_screen.dart';
 import 'package:more_screens/fourth_screen.dart';
+import 'package:more_screens/ninth_screen.dart';
 import 'package:more_screens/second_screen.dart';
 import 'package:more_screens/seventh_screen.dart';
 import 'package:more_screens/sixth_screen.dart';
+import 'package:more_screens/tenth_screen.dart';
 import 'package:more_screens/third_screen.dart';
 
 void main() {
@@ -45,6 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
   String? appButtonText4;
   String? appButtonText5;
   String? appButtonText6;
+  String? appButtonText7;
+  String? appButtonText8;
+  String? appButtonText9;
+
 
   Future<void> navigateToSecondScreen() async {
     final res = await Navigator.of(context).push(
@@ -123,6 +130,45 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future<void> navigateToEighthScreen() async {
+    final res = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const EighthScreen();
+        },
+      ),
+    );
+    setState(() {
+      appButtonText7 = res;
+    });
+  }
+
+  Future<void> navigateToNinthScreen() async {
+    final res = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const NinthScreen();
+        },
+      ),
+    );
+    setState(() {
+      appButtonText8 = res;
+    });
+  }
+
+  Future<void> navigateToTenthScreen() async {
+    final res = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const TenthScreen();
+        },
+      ),
+    );
+    setState(() {
+      appButtonText9 = res;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.vertical,
-              itemCount: 6,
+              itemCount: 27,
               itemBuilder: (context, index) {
                 String buttonText;
                 Function onPressed;
@@ -165,6 +211,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   case 5:
                     buttonText = appButtonText6 ?? 'На седьмой экран';
                     onPressed = navigateToSeventhScreen;
+                  case 6:
+                    buttonText = appButtonText7 ?? 'На восьмой экран';
+                    onPressed = navigateToEighthScreen;
+                  case 7:
+                    buttonText = appButtonText8 ?? 'На девятый экран';
+                    onPressed = navigateToNinthScreen;
+                  case 8:
+                    buttonText = appButtonText9 ?? 'На десятый экран';
+                    onPressed = navigateToTenthScreen;
                   default:
                     buttonText = '';
                     onPressed = () {};
