@@ -16,7 +16,30 @@ class FifthScreen extends StatelessWidget {
           }
         )
       ),
-      
+      body: Center(
+        heightFactor: double.infinity,
+        widthFactor: double.infinity,
+        child: Column(
+          mainAxisAlignment:MainAxisAlignment.center,
+          children: [
+            Container(
+                width: double.infinity,
+                height: 50,
+                color: const Color.fromARGB(255, 223, 221, 221),
+              ),
+              Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.blue,
+              ),
+              Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.red,
+              ),
+          ],
+        ),
+        ),
         );
   }
 }
