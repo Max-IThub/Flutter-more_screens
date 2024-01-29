@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:more_screens/fifth_screen.dart';
 import 'package:more_screens/fourth_screen.dart';
 import 'package:more_screens/second_screen.dart';
+import 'package:more_screens/seventh_screen.dart';
 import 'package:more_screens/sixth_screen.dart';
 import 'package:more_screens/third_screen.dart';
 
@@ -43,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String? appButtonText3;
   String? appButtonText4;
   String? appButtonText5;
+  String? appButtonText6;
 
   Future<void> navigateToSecondScreen() async {
     final res = await Navigator.of(context).push(
@@ -108,6 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+    Future<void> navigateToSeventhScreen() async {
+    final res = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const SeventhScreen();
+        },
+      ),
+    );
+    setState(() {
+      appButtonText6 = res;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.vertical,
-              itemCount: 5,
+              itemCount: 6,
               itemBuilder: (context, index) {
                 String buttonText;
                 Function onPressed;
@@ -147,6 +162,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   case 4:
                     buttonText = appButtonText5 ?? 'На шестой экран';
                     onPressed = navigateToSixthScreen;
+                  case 5:
+                    buttonText = appButtonText6 ?? 'На седьмой экран';
+                    onPressed = navigateToSeventhScreen;
                   default:
                     buttonText = '';
                     onPressed = () {};
