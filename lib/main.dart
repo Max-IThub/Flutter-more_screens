@@ -105,6 +105,7 @@ setState(() {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Main Page'),
+        
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -131,6 +132,7 @@ setState(() {
             ],
           )
         ],
+        
       ),
     );
   }
