@@ -107,11 +107,11 @@ setState(() {
         title: const Text('Main Page'),
         
       ),
-      body: Column(
+      body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Wrap(
-            
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(onPressed: (){
                 navigateToSecondScreen();
