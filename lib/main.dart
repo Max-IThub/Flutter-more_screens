@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:more_screens/eighth_screen.dart';
+import 'package:more_screens/eleventth_screen.dart';
 import 'package:more_screens/fifth_screen.dart';
 import 'package:more_screens/fourth_screen.dart';
 import 'package:more_screens/ninth_screen.dart';
@@ -51,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String? appButtonText7;
   String? appButtonText8;
   String? appButtonText9;
+  String? appButtonText10;
 
 
   Future<void> navigateToSecondScreen() async {
@@ -169,7 +171,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
+  Future<void> navigateToEleventhScreen() async {
+    final res = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const EleventhScreen();
+        },
+      ),
+    );
+    setState(() {
+      appButtonText10 = res;
+    });
+  }
   
 
   @override
@@ -223,6 +236,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   case 8:
                     buttonText = appButtonText9 ?? 'На десятый экран';
                     onPressed = navigateToTenthScreen;
+                  case 9:
+                    buttonText = appButtonText10 ?? 'На одиннадцатый экран';
+                    onPressed = navigateToEleventhScreen;
                   default:
                     buttonText = '';
                     onPressed = () {};
@@ -248,11 +264,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           NavigationDestination(
             icon: Icon(Icons.person), 
-            label: 'Profile'
+            label: 'Profile',
             ),
           NavigationDestination(
             icon: Icon(Icons.settings_rounded), 
-            label: 'Settings'
+            label: 'Settings',
             ),
         ],
       ),
